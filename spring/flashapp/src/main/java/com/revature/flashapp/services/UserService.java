@@ -27,7 +27,7 @@ public class UserService {
     public User getOne(Integer userId){
         return userDao.findById(userId).orElse(null);
     }
-
+    
     public User updateOne(User user){
         User userFromDb = userDao.findById(user.getId()).orElse(null);
 
