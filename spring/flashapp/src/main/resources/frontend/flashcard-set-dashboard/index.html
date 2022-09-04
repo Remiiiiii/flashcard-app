@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            
+          <a class="navbar-brand" href="#">
+            <img src="../images/fm.jpg" alt="" width="100" height="100" class="d-inline-block align-text-top">
+           
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">some soon to be text</a>
+              <a class="nav-link" href="#">some soon to be text</a>
+              <form id="add-card-form">
+                <button class="btn btn-primary">+ Add</button>
+              </form>
+              <!-- <button class="btn new-set-btn" type="submit">+ New Study Set </button>
+              <button class="btn delete-set-btn" type="submit">- Delete This Set</button> -->
+            </div>
+          </div>
+        </div>
+              <a class="nav-link">Logout</a>
+      </nav>
+      <hr>
+
+      <div class="container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <!-- <div class="border"></div>
+        <div class="border"></div> -->
+        <svg>
+          <defs>
+            <filter id = 'goo'>
+              <feGaussianBlur in='sourcegraphic'
+              stdDeviation='10'/>
+              <feColorMatrix in='name' mode='matrix'
+              values='1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 30 -15' />
+              <feBlend in='SourceGraphic' />
+            </filter>
+          </defs>
+        </svg>
+        
+
+        <div class="card">
+          <div class="inside-card">
+          <div class="card-face card-front">
+            <div class="card-front-header">
+            <img src="../images/fm.jpg" alt="app logo" class="front-card-logo" />
+    
+              <h2>HTLM / CSS</h2>
+          </div>
+    
+            <h2>Hypertext Markup Language & Cascading Style Sheet</h2>
+          </div>
+         
+          <div class="card-face card-back">
+            <div class="back-card-content">
+                
+                <div class="back-card-body">
+                  <h3>About:</h3>
+                    <p>HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of 
+                      the core technologies for building Web pages. HTML provides the structure of the 
+                      page, CSS the (visual and aural) layout, for a variety of devices</p>
+                </div>
+          </div>
+        </div>
+        <form id="delete-card-form">
+          <button class="delete-button">Delete</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  
+      
+      
+
+    
+    <script src="../flashcard-set-dashboard/scripts.js"></script>
+</body>
+</html>
