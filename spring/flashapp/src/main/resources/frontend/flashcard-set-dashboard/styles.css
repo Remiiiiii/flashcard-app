@@ -36,6 +36,75 @@ nav {
     font-weight: 600;
 }
 
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    z-index: 100;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+    width: 300px;
+}
+
+.sub-menu {
+    background-image: linear-gradient(to bottom right, var(--blue), var(--purple));
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 16px;
+}
+
+.sub-menu h3 {
+    font-weight: 500;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--white);
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    color: var(--white);
+    cursor: pointer;
+    margin: 12px;
+    
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 95px;
+}
+
 hr {
     padding: 0%;
 }
@@ -196,6 +265,10 @@ hr {
     border-radius: 16px;
     z-index: 100;
     border: none;
+}
+
+.dropdown {
+    z-index: 100;
 }
 
 .inside-card {
