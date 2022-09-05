@@ -256,19 +256,20 @@ hr {
 
 }
 
-.card{
-    justify-content: space-evenly;
-    margin: 10px auto 0;
-    width: 300px;
+.container {
+    display: flex;
+    float: left;
+}
+
+.card {
+    margin-top: 100px;
+    margin-right: 30px;
+    width: 500px;
     height: 400px;
     perspective: 1000px;
     border-radius: 16px;
     z-index: 100;
     border: none;
-}
-
-.dropdown {
-    z-index: 100;
 }
 
 .inside-card {
