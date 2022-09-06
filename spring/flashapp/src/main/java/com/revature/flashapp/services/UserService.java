@@ -16,40 +16,8 @@ public class UserService {
     private UserRepo userRepo;
 
     @Autowired
-<<<<<<< HEAD
     public UserService(UserRepo userRepo){
         this.userRepo = userRepo;
-=======
-    public UserService(UserDao userDao){
-        this.userDao = userDao;
-    }
-
-    public List<User> getAllUsers(){
-        return this.userDao.findAll();
-    }
-    
-    public User getOne(Integer userId){
-        return userDao.findById(userId).orElse(null);
-    }
-    
-    public User updateOne(User user){
-        User userFromDb = userDao.findById(user.getId()).orElse(null);
-
-        if(userFromDb == null)
-        return null;
-
-        return userDao.save(user);
-
-    }
-
-    public void deleteOne(Integer id){
-        User userFromDb = userDao.findById(id).orElse(null);
-        
-        if(userFromDb == null)
-        return;
-
-        userDao.deleteById(id);
->>>>>>> main
     }
 
     public User createUser(User user){
@@ -89,9 +57,6 @@ public class UserService {
         return this.userRepo.findAll();
     }
     
-
-  
-
     public boolean validateCredentials(User credentials){
         User userFromDb = userRepo.findByUsernameAndPassword(credentials.getUsername(), credentials.getPassword());
 
