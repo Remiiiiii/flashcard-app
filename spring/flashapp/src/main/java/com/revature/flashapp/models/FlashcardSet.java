@@ -21,7 +21,7 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "flashcardset")
-public class flashcardSet {
+public class FlashcardSet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
