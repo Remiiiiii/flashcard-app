@@ -28,10 +28,15 @@ public class FlashcardSet {
     private Integer id;
 
     @Column(nullable = false)
-    private String name;
+    private String title;
+
+    @Column(nullable = false)
+    private String description;
 
     @ManyToOne
     private User user;
+
+    
 
 
     
