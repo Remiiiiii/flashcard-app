@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.flashapp.models.FlashcardSet;
 import com.revature.flashapp.models.Flashcards;
-import com.revature.flashapp.models.flashcardSet;
 import com.revature.flashapp.repository.FlashcardRepo;
 import com.revature.flashapp.repository.FlashcardSetRepo;
 

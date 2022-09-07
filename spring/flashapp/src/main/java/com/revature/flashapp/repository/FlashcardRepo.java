@@ -12,10 +12,10 @@ import com.revature.flashapp.models.Flashcards;
 @Repository
 public interface FlashcardRepo extends JpaRepository<Flashcards, Integer> {
     
-    List<FlashcardSet> showAllflashcards();
+    // List<Flashcards> showAllflashcards(FlashcardSet setId);
 
-    void createflashcard();
+    // void createflashcard();
 
-    void deleteflashcard();
+    // void deleteflashcard();
 
 }

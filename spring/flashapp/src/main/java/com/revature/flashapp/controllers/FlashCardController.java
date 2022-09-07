@@ -48,7 +48,7 @@ public class FlashCardController {
     }
 
     @GetMapping
-    public List<Flashcards> getAllflashcard(){
+    public List<Flashcards> showAllflashcards(){
         return this.flashcardService.showAllflashcards();
     }
 }

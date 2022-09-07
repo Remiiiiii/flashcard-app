@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.flashapp.models.FlashcardSet;
-import com.revature.flashapp.models.flashcardSet;
 import com.revature.flashapp.repository.FlashcardSetRepo;
 
 
@@ -46,7 +45,7 @@ public class FlashcardSetService {
 
     }
 
-    public void deleteflashcardSetById(Integer flashcardSetId){
+    public void deleteFlashcardSetById(Integer flashcardSetId){
         FlashcardSet flashcardSetFromDb = flashcardSetRepo.findById(flashcardSetId).orElse(null);
         
         if(flashcardSetFromDb == null)
@@ -55,7 +54,7 @@ public class FlashcardSetService {
         flashcardSetRepo.deleteById(flashcardSetId);
     }
 
-    public List<FlashcardSet> getAllflashcardSets(){
+    public List<FlashcardSet> showAllSets(){
         return this.flashcardSetRepo.findAll();
     }
     

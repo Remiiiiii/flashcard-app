@@ -13,11 +13,11 @@ public interface FlashcardSetRepo extends JpaRepository<FlashcardSet, Integer>  
  
  
 
-    List<FlashcardSet> showAllSets();
+    // List<FlashcardSet> showAllSets();
 
-    void createFlashcardSet();
+    // void createflashcardSet();
 
-    void deleteFlashcardSet();
+    // void deleteFlashcardSetById(Integer setId);
 
     
 }
