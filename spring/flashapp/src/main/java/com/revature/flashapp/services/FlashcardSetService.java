@@ -47,7 +47,6 @@ public class FlashcardSetService {
 
     public void deleteflashcardSetById(Integer flashcardSetId){
         FlashcardSet flashcardSetFromDb = flashcardSetRepo.findById(flashcardSetId).orElse(null);
-        System.out.println("Flashcard Set from DB: " + flashcardSetFromDb);
         if(flashcardSetFromDb == null){
             return;
         }

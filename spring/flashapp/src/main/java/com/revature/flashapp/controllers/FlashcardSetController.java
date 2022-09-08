@@ -42,8 +42,6 @@ public class FlashcardSetController {
         return "Flashcard Set with Id: " + setId + " was deleted if exists";
     }
 
-
- 
     @GetMapping
     public List<FlashcardSet> getAllflashcardSets(){
         return this.flashcardSetService.getAllflashcardSets();
