@@ -30,7 +30,7 @@ public class FlashcardSetController {
 
     @PostMapping
     public FlashcardSet createflashcardSet(@RequestBody FlashcardSet cardInfo){
-        return this.flashcardSetService.createflashcardSet(cardInfo);
+        return flashcardSetService.createflashcardSet(cardInfo);
     }
 
     @GetMapping("{setId}")

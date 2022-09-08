@@ -48,8 +48,10 @@ public class FlashcardSetService {
     public void deleteFlashcardSetById(Integer flashcardSetId){
         FlashcardSet flashcardSetFromDb = flashcardSetRepo.findById(flashcardSetId).orElse(null);
         
-        if(flashcardSetFromDb == null)
-        return;
+        if(flashcardSetFromDb == null){
+            return;
+        }
+        
 
         flashcardSetRepo.deleteById(flashcardSetId);
     }
