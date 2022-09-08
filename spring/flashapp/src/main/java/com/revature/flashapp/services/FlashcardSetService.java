@@ -45,16 +45,19 @@ public class FlashcardSetService {
 
     }
 
-    public void deleteflashcardSetById(Integer flashcardSetId){
+    public void deleteFlashcardSetById(Integer flashcardSetId){
         FlashcardSet flashcardSetFromDb = flashcardSetRepo.findById(flashcardSetId).orElse(null);
+
+        
         if(flashcardSetFromDb == null){
             return;
         }
+        
 
         flashcardSetRepo.deleteById(flashcardSetId);
     }
 
-    public List<FlashcardSet> getAllflashcardSets(){
+    public List<FlashcardSet> showAllSets(){
         return this.flashcardSetRepo.findAll();
     }
     

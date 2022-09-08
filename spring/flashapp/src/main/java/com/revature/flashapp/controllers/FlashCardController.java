@@ -1,6 +1,5 @@
 package com.revature.flashapp.controllers;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.flashapp.models.Flashcards;
 import com.revature.flashapp.services.FlashcardService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("flashcard")
@@ -45,7 +42,8 @@ public class FlashCardController {
     }
 
     @GetMapping
-    public List<Flashcards> getAllflashcards(){
+    public List<Flashcards> showAllflashcards(){
+
         return this.flashcardService.showAllflashcards();
     }
 }
