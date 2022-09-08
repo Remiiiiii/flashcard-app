@@ -14,7 +14,9 @@ import com.revature.flashapp.services.FlashcardSetService;
 import java.util.List;
 
 @RestController
-@RequestMapping("flashcardSet")
+
+@RequestMapping("flashcardset")
+
 public class FlashcardSetController {
 
     private FlashcardSetService flashcardSetService;
@@ -25,6 +27,7 @@ public class FlashcardSetController {
     }
 
     @PostMapping
+
     public FlashcardSet createflashcardSet(@RequestBody FlashcardSet cardInfo){
         return flashcardSetService.createflashcardSet(cardInfo);
     }
