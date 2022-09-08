@@ -1,7 +1,5 @@
 package com.revature.flashapp.repository;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +11,7 @@ public interface UserRepo extends JpaRepository<User, Integer> {
     User findByUsernameAndPassword(String username, String password);
    // User createUser(User user);
 
-    User getUserById(Integer id);
+    //User getUserById(Integer user_id);
 }
 
 
