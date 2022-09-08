@@ -6,12 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.revature.flashapp.models.FlashcardSet;
 import com.revature.flashapp.models.Flashcards;
 import com.revature.flashapp.repository.FlashcardRepo;
-import com.revature.flashapp.repository.FlashcardSetRepo;
 
+
+
+@Service
+@Transactional
 public class FlashcardService {
 
     private FlashcardRepo flashcardRepo;
