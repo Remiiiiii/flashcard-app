@@ -7,12 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.flashapp.models.Flashcards;
 import com.revature.flashapp.services.FlashcardService;
+
 import java.util.List;
 
-
+@RestController
+@RequestMapping("flashcard")
 public class FlashCardController {
 
     private FlashcardService flashcardService;
@@ -41,7 +45,7 @@ public class FlashCardController {
     }
 
     @GetMapping
-    public List<Flashcards> getAllflashcard(){
+    public List<Flashcards> getAllflashcards(){
         return this.flashcardService.showAllflashcards();
     }
 }
