@@ -34,6 +34,7 @@ public class Flashcards {
     private String description;
 
     @ManyToOne
+    //@JoinColumn(name="id")
     private FlashcardSet flashcardSet;
     
 }
