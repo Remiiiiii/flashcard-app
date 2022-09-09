@@ -1,5 +1,7 @@
 package com.revature.flashapp.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +19,5 @@ public interface FlashcardSetRepo extends JpaRepository<FlashcardSet, Integer>  
 
     // void deleteFlashcardSetById(Integer setId);
 
-    
+    List<FlashcardSet> findAllSetsById(Integer setId);
 }

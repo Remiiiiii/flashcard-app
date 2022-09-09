@@ -59,6 +59,10 @@ public class FlashcardSetService {
     public List<FlashcardSet> showAllSets(){
         return this.flashcardSetRepo.findAll();
     }
+
+    public List<FlashcardSet> getAllBySets(Integer setId){
+        return this.flashcardSetRepo.findAllSetsById(setId);
+    }
     
     // public boolean validateFlashcardSet(FlashcardSet cardInfo){
     //     FlashcardSet flashcardSetFromDb = flashcardSetRepo.createFlashcardSet(cardInfo.getTitle(), cardInfo.getDescription(), cardInfo.getUser());

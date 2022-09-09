@@ -258,13 +258,13 @@ hr {
 
 .container {
     display: flex;
-    float: left;
+    flex-wrap: wrap;
 }
 
 .card {
     margin-top: 100px;
-    margin-right: 30px;
-    width: 500px;
+    margin: 30px;
+    width: 300px;
     height: 400px;
     perspective: 1000px;
     border-radius: 16px;
