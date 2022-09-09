@@ -39,10 +39,8 @@ public class FlashcardSet {
     @Column(nullable = false)
     private String description;
 
-    @OneToMany(mappedBy = "flashcards", cascade = CascadeType.ALL)
-    // @JoinColumn(nullable = false)
-    //private User user;
-    List<FlashcardSet> flashcardSet = new ArrayList<>();
+    @OneToMany(mappedBy = "flashcardSet", cascade = CascadeType.ALL)
+    private List<Flashcards> flashcards = new ArrayList<>();
 
     
 
