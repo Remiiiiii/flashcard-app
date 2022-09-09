@@ -37,8 +37,9 @@ public class UserService {
     public User updateUserById(User user){
         User userFromDb = userRepo.findById(user.getId()).orElse(null);
 
-        if(userFromDb == null)
-        return null;
+        if(userFromDb == null){
+            return null;
+        }
 
         return userRepo.save(user);
 

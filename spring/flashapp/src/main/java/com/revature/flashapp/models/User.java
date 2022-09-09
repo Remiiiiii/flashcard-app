@@ -1,11 +1,16 @@
 package com.revature.flashapp.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -24,6 +29,7 @@ import lombok.ToString;
 public class User {
 
     @Id
+    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)//Same as using serial in the db
     private Integer id;
 
@@ -38,5 +44,8 @@ public class User {
 
     @Column(nullable = false)
     private String lastname;
+
+    /*@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<FlashcardSet> flashcardSet = new ArrayList<>();*/
     
 }
