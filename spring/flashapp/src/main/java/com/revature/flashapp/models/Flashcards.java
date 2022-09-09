@@ -37,7 +37,9 @@ public class Flashcards {
     @Column(nullable = false)
     private String description;
 
+
     @JsonIgnoreProperties("flashcards")
+    @ManyToOne
     @JoinColumn(nullable = false)
     private FlashcardSet flashcardSet;
     

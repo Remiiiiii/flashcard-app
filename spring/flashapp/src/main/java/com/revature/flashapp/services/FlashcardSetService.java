@@ -21,7 +21,7 @@ public class FlashcardSetService {
         this.flashcardSetRepo = flashcardSetRepo;
     }
 
-    public FlashcardSet createflashcardSet(FlashcardSet flashcardSet){
+    public FlashcardSet createFlashcardSet(FlashcardSet flashcardSet){
 
         if (flashcardSet.getId() != null) {
             return null;
@@ -47,6 +47,7 @@ public class FlashcardSetService {
 
     public void deleteFlashcardSetById(Integer flashcardSetId){
         FlashcardSet flashcardSetFromDb = flashcardSetRepo.findById(flashcardSetId).orElse(null);
+
         
         if(flashcardSetFromDb == null){
             return;
