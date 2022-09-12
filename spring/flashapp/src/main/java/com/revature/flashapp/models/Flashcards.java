@@ -1,9 +1,7 @@
 package com.revature.flashapp.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,8 +35,6 @@ public class Flashcards {
     @Column(nullable = false)
     private String description;
 
-
-    @JsonIgnoreProperties("flashcards")
     @ManyToOne
     @JsonIgnoreProperties("flashcards")
     @JoinColumn(nullable = false)

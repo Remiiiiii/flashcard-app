@@ -10,9 +10,6 @@ import org.springframework.stereotype.Service;
 import com.revature.flashapp.models.Flashcards;
 import com.revature.flashapp.repository.FlashcardRepo;
 
-import com.revature.flashapp.models.Flashcards;
-import com.revature.flashapp.repository.FlashcardRepo;
-
 @Service
 @Transactional
 public class FlashcardService {

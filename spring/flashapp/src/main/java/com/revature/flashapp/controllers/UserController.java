@@ -44,8 +44,6 @@ public class UserController {
         return "User with Id: " + userId + " was deleted if exists";
     }
 
-
- 
     @GetMapping
     public List<User> getAllUsers(){
         return this.userService.getAllUsers();

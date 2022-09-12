@@ -14,9 +14,7 @@ import com.revature.flashapp.services.FlashcardSetService;
 import java.util.List;
 
 @RestController
-
 @RequestMapping("flashcardset")
-
 public class FlashcardSetController {
 
     private FlashcardSetService flashcardSetService;
@@ -27,7 +25,6 @@ public class FlashcardSetController {
     }
 
     @PostMapping
-
     public FlashcardSet createflashcardSet(@RequestBody FlashcardSet cardInfo){
         return flashcardSetService.createFlashcardSet(cardInfo);
     }
@@ -46,18 +43,14 @@ public class FlashcardSetController {
         return "Flashcard Set with Id: " + setId + " was deleted if exists";
     }
 
+    @GetMapping
+    public List<FlashcardSet> showAllSets(){
+        return this.flashcardSetService.showAllSets();
+    }
 
- 
-    // @GetMapping
-    // public List<FlashcardSet> showAllSets(){
-    //     return this.flashcardSetService.showAllSets();
-    // }
-
-    @GetMapping("flashcardSet/{setId}/flashcard")
+    @GetMapping("flashcardSet/{setId}")
     public List<FlashcardSet> showAllSets(@PathVariable Integer setId){
         return this.flashcardSetService.getAllBySets(setId);
     }
-
-
     
 }

@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,8 +42,9 @@ public class FlashcardSet {
     @Column(nullable = false)
     private String description;
 
-    @OneToMany(mappedBy = "flashcardSet", cascade = CascadeType.ALL)
-    private List<Flashcards> flashcards = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private User user;
 
     @OneToMany(mappedBy = "flashcardSet", cascade = CascadeType.ALL)
     private List<Flashcards> flashcards = new ArrayList<>();
