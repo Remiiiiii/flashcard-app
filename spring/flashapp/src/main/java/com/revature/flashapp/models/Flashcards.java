@@ -10,10 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,9 +37,12 @@ public class Flashcards {
     @Column(nullable = false)
     private String description;
 
+
+    @JsonIgnoreProperties("flashcards")
     @ManyToOne
     @JsonIgnoreProperties("flashcards")
     @JoinColumn(nullable = false)
     private FlashcardSet flashcardSet;
+    
     
 }
