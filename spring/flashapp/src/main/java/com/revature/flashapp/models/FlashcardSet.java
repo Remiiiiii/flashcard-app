@@ -43,7 +43,7 @@ public class FlashcardSet {
     private String description;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "user_id_fk")
     private User user;
 
     @OneToMany(mappedBy = "flashcardSet", cascade = CascadeType.ALL)

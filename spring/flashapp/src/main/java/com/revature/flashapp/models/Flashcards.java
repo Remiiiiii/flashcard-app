@@ -37,7 +37,7 @@ public class Flashcards {
 
     @ManyToOne
     @JsonIgnoreProperties("flashcards")
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = false, name = "flashcardset_id_fk")
     private FlashcardSet flashcardSet;
     
     

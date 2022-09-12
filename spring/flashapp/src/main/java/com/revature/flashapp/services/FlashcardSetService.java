@@ -61,8 +61,8 @@ public class FlashcardSetService {
         return this.flashcardSetRepo.findAll();
     }
 
-    public List<FlashcardSet> getAllBySets(Integer setId){
-        return this.flashcardSetRepo.findAllSetsById(setId);
+    public List<FlashcardSet> getAllSetsByUserId(Integer userId){
+        return this.flashcardSetRepo.findAllSetsByUserId(userId);
     }
     
     // public boolean validateFlashcardSet(FlashcardSet cardInfo){

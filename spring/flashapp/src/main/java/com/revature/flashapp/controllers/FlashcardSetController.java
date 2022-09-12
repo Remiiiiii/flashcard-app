@@ -48,9 +48,9 @@ public class FlashcardSetController {
         return this.flashcardSetService.showAllSets();
     }
 
-    @GetMapping("flashcardSet/{setId}")
-    public List<FlashcardSet> showAllSets(@PathVariable Integer setId){
-        return this.flashcardSetService.getAllBySets(setId);
+    @GetMapping("flashcardSet/{userId}")
+    public List<FlashcardSet> showAllSets(@PathVariable Integer userId){
+        return this.flashcardSetService.getAllSetsByUserId(userId);
     }
     
 }
