@@ -14,6 +14,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class JsonResponse {
+    private boolean successful;
     private String message;
     private Object data;
 }

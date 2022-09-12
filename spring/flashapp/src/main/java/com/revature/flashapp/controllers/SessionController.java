@@ -2,6 +2,7 @@ package com.revature.flashapp.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,13 +25,20 @@ public class SessionController {
 
     private UserService userService;
 
+    @Autowired
+    public SessionController(UserService userService){
+        this.userService = userService;
+    }
+
     @PostMapping
     public ResponseEntity<JsonResponse> login(HttpSession session, @RequestBody User credentials){
-        session.setAttribute("user", credentials);
+        
         if(userService.validateCredentials(credentials)){
-            return ResponseEntity.status(HttpStatus.OK).body(new JsonResponse("login successful and session created", credentials));
+            session.setAttribute("user", credentials);
+            System.out.println(session.getAttribute("user"));
+            return ResponseEntity.status(HttpStatus.OK).body(new JsonResponse(true, "login successful and session created", credentials));
         }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse("login not successful", credentials));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "login not successful", credentials));
         }
     }
 
@@ -39,10 +47,10 @@ public class SessionController {
         User user = (User) session.getAttribute("user");
 
         if(user == null){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse("session not found", null));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "session not found", null));
         }
 
-        return ResponseEntity.ok(new JsonResponse("session found", user));
+        return ResponseEntity.ok(new JsonResponse(true, "session found", user));
     }
 
     @DeleteMapping
@@ -51,7 +59,7 @@ public class SessionController {
         //session.invalidate();
         session.setAttribute("user", null);
 
-        return ResponseEntity.ok(new JsonResponse("logging out and session invalidated", null));
+        return ResponseEntity.ok(new JsonResponse(true, "logging out and session invalidated", null));
     }
 
 }
