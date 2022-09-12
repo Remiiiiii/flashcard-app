@@ -40,7 +40,6 @@ public class UserService {
         if(userFromDb == null){
             return null;
         }
-
         return userRepo.save(user);
 
     }
@@ -59,8 +58,9 @@ public class UserService {
     }
     
     public boolean validateCredentials(User credentials){
+        System.out.println(credentials.getUsername());
+        System.out.println(credentials.getPassword());
         User userFromDb = userRepo.findByUsernameAndPassword(credentials.getUsername(), credentials.getPassword());
-
         return userFromDb != null;
     }
 }
