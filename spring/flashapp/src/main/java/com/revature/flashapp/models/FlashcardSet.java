@@ -30,6 +30,7 @@ import lombok.ToString;
 public class FlashcardSet {
 
     @Id
+    @Column(name = "flashcardset_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -42,8 +43,7 @@ public class FlashcardSet {
     @OneToMany(mappedBy = "flashcardSet", cascade = CascadeType.ALL)
     private List<Flashcards> flashcards = new ArrayList<>();
 
-    
+    @OneToMany(mappedBy = "flashcardSet", cascade = CascadeType.ALL)
+    private List<Flashcards> flashcards = new ArrayList<>();
 
-
-    
 }
