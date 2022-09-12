@@ -1,15 +1,12 @@
-/*window.onload = async () => {
-    let response = await fetch("http://localhost:9005/session", {
-            method: "POST"
-        }
-    )
-
+window.onload = async () => {
+    let response = await fetch("http://localhost:9005/session");
+    
     let responseBody = await response.json();
 
     if(responseBody.successful){
-        window.location = "./flashcard-dashboard";
+        window.location = "../flashcard-dashboard";
     }
-}*/
+}
 
 let loginFormElem = document.getElementById("login-form");
 

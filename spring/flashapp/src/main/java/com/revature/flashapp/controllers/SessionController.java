@@ -35,7 +35,6 @@ public class SessionController {
         
         if(userService.validateCredentials(credentials)){
             session.setAttribute("user", credentials);
-            System.out.println(session.getAttribute("user"));
             return ResponseEntity.status(HttpStatus.OK).body(new JsonResponse(true, "login successful and session created", credentials));
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "login not successful", credentials));
@@ -45,7 +44,7 @@ public class SessionController {
     @GetMapping
     public ResponseEntity<JsonResponse> checkSession(HttpSession session){
         User user = (User) session.getAttribute("user");
-
+        System.out.println("USER SESSION: " + session.getAttribute("user"));
         if(user == null){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "session not found", null));
         }
