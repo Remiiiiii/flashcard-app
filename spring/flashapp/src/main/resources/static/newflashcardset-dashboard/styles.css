@@ -111,7 +111,7 @@ nav {
     padding: 20px
 }
 
-.save-flashcardset-btn, .delete-flashcardset-btn {
+.save-flashcardset-btn, .back-btn {
     border-radius: 25px;
     box-shadow: 8px 8px 8px #cbced1,
         -8px -8px 8px #fff;

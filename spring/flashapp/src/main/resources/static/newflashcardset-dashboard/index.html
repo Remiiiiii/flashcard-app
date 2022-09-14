@@ -41,8 +41,8 @@
                 <div class="nav-container2">
                     <div class="nav-item-container2">
                         <!-- <form id="add-flashcardset-form"> -->
-                            <button class="save-flashcardset-btn">SAVE</button>
-                            <button class="delete-flashcardset-btn">BACK</button>
+                            <button type="button" class="save-flashcardset-btn" id="save-btn">SAVE</button>
+                            <button type="button" class="back-btn" id="back-btn">BACK</button>
                             
                         <!-- </form> -->
                     </div>
@@ -108,11 +108,11 @@
         </svg>
         <div class="container new-flashcardset-container" >
             <div class="create-card-container">
-                <label for="question">Title</label>
-                <textarea id="question"  placeholder=" Begin Typing..."></textarea>
+                <label for="title">Title</label>
+                <textarea id="title"  placeholder=" Begin Typing..."></textarea>
                 <hr>
-                <label for="answer">Description</label>
-                <textarea id="answer" placeholder=" Begin Typing..."></textarea>
+                <label for="description">Description</label>
+                <textarea id="description" placeholder=" Begin Typing..."></textarea>
                 
             </div>
             <div class="flashcards"></div>
@@ -145,7 +145,7 @@
     </div>
   </div>
 
-    <script src="../newflashcard-dashboard/scripts.js"></script>
+    <script src="../newflashcardset-dashboard/scripts.js"></script>
 
 </body>
 

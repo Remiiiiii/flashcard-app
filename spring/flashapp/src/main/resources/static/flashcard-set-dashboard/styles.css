@@ -40,6 +40,10 @@ nav {
     margin-top: 20px;
 }
 
+.navbar-nav {
+    z-index: 1;
+}
+
 .nav-container2 {
     background-color: var(--white);
     width: 25%;
@@ -195,9 +199,11 @@ hr {
 }
 
 .container {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     position: relative;
     margin-top: 0;
     filter: url(#goo);
@@ -341,14 +347,13 @@ hr {
 
 }
 
-.container {
+#set-container{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
-}
-
-#set-container{
-    display: flex;
     justify-content: space-evenly;
+
 }
 
 .card {
