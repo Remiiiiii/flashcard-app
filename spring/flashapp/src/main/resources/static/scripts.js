@@ -1,15 +1,12 @@
-/*window.onload = async () => {
-    let response = await fetch("http://localhost:9005/session", {
-            method: "POST"
-        }
-    )
-
+window.onload = async () => {
+    let response = await fetch("http://localhost:9005/session");
+    
     let responseBody = await response.json();
 
     if(responseBody.successful){
-        window.location = "./flashcard-dashboard";
+        window.location = "./flashcard-set-dashboard/index.html";
     }
-}*/
+}
 
 let loginFormElem = document.getElementById("login-form");
 
@@ -52,7 +49,7 @@ async function sendLoginRequest(username, password){
     let responseBody = await response.json();
     
     if(responseBody.successful){
-        window.location = "../flashcard-dashboard";
+        window.location = "/flashcard-set-dashboard/index.html";
     }else{
         let messageElem = document.getElementById("message");
         messageElem.style.display = "block";

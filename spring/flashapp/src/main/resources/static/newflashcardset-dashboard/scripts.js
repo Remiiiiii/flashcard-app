@@ -7,6 +7,8 @@ card.addEventListener('click', function() {
 let subMenu = document.getElementById("subMenu");
 
 //-------------------------------Profile Icon Menu Dropdown------------------------------
-function toggleMenu(){
-  subMenu.classList.toggle("open-menu");
-}
+
+
+
+
+

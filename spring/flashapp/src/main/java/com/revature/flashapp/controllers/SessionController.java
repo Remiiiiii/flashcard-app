@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +18,6 @@ import com.revature.flashapp.models.User;
 import com.revature.flashapp.services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5500/", allowCredentials = "true")
 @RequestMapping(value = "session")
 public class SessionController {
 
@@ -34,8 +32,8 @@ public class SessionController {
     public ResponseEntity<JsonResponse> login(HttpSession session, @RequestBody User credentials){
         
         if(userService.validateCredentials(credentials)){
-            session.setAttribute("user", credentials);
-            System.out.println(session.getAttribute("user"));
+            User userFromDb = userService.getUserByUsername(credentials.getUsername());
+            session.setAttribute("user", userFromDb);
             return ResponseEntity.status(HttpStatus.OK).body(new JsonResponse(true, "login successful and session created", credentials));
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "login not successful", credentials));
@@ -45,7 +43,6 @@ public class SessionController {
     @GetMapping
     public ResponseEntity<JsonResponse> checkSession(HttpSession session){
         User user = (User) session.getAttribute("user");
-
         if(user == null){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "session not found", null));
         }
