@@ -425,6 +425,7 @@ hr {
     top: -225px;
     width: 1000px;
     height: 350px;
+    margin-bottom: 50px;
     perspective: 1500px;
     border-radius: 16px;
     z-index: 10;
