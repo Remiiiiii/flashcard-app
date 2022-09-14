@@ -4,7 +4,7 @@ window.onload = async () => {
     let responseBody = await response.json();
 
     if(responseBody.successful){
-        window.location = "../flashcard-dashboard";
+        window.location = "./flashcard-set-dashboard/index.html";
     }
 }
 

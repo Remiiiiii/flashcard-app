@@ -19,7 +19,6 @@ import com.revature.flashapp.models.User;
 import com.revature.flashapp.services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:9005/", allowCredentials = "true")
 @RequestMapping(value = "session")
 public class SessionController {
 
@@ -44,7 +43,6 @@ public class SessionController {
     @GetMapping
     public ResponseEntity<JsonResponse> checkSession(HttpSession session){
         User user = (User) session.getAttribute("user");
-        System.out.println("USER SESSION: " + session.getAttribute("user"));
         if(user == null){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "session not found", null));
         }
