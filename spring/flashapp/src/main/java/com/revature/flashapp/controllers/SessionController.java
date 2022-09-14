@@ -19,7 +19,7 @@ import com.revature.flashapp.models.User;
 import com.revature.flashapp.services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5500/", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:9005/", allowCredentials = "true")
 @RequestMapping(value = "session")
 public class SessionController {
 

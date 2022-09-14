@@ -49,9 +49,10 @@ async function sendLoginRequest(username, password){
     let responseBody = await response.json();
     
     if(responseBody.successful){
-        window.location = "../flashcard-set-dashboard";
+        window.location = "/flashcard-set-dashboard/index.html";
     }else{
         let messageElem = document.getElementById("message");
         messageElem.style.display = "block";
     }
 }
+
