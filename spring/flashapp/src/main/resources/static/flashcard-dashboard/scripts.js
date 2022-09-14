@@ -14,5 +14,9 @@ let subMenu = document.getElementById("subMenu");
 // });
 
 
+let homeButton = document.getElementById("home-button");
+homeButton.addEventListener('click', () => {
+       window.location = "../flashcard-set-dashboard/index.html";
+});
 
 
