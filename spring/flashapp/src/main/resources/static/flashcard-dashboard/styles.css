@@ -422,7 +422,7 @@ hr {
 .card {
     display: flex;
     justify-content: center;
-    top: -225px;
+    top: -55px;
     width: 1000px;
     height: 350px;
     margin-bottom: 50px;
@@ -430,6 +430,7 @@ hr {
     border-radius: 16px;
     z-index: 10;
     border: none;
+    margin-bottom: 100px;
 }
 
 .inside-card {
