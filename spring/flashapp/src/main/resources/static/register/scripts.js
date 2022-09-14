@@ -30,8 +30,5 @@ registerFormElem.addEventListener("submit", (event) => {
         "firstname": document.getElementById("firstname-input").value,
         "lastname": document.getElementById("lastname-input").value
     }
-    
-    console.log(credentials);
-
     sendRegisterRequest(credentials);
 });

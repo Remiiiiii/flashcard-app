@@ -32,9 +32,9 @@ public class FlashCardController {
         return this.flashcardService.createflashcard(cardInfo);
     }
 
-    @GetMapping("{flashcardId}")
-    public Flashcards getflashcardById(@PathVariable Integer flashcardId){
-        return flashcardService.getflashcardById(flashcardId);
+    @GetMapping("{setId}")
+    public List<Flashcards> getflashcardBySetId(@PathVariable Integer setId){
+        return flashcardService.getflashcardBySetId(setId);
 
     }
 

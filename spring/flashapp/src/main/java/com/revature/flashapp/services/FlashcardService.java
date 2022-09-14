@@ -31,8 +31,8 @@ public class FlashcardService {
     }
 
    
-    public Flashcards getflashcardById(Integer flashcardSetId){
-        return flashcardRepo.findById(flashcardSetId).orElse(null);
+    public List<Flashcards> getflashcardBySetId(Integer setId){
+        return flashcardRepo.findAllByFlashcardSetId(setId);
     }
 
     public Flashcards updateflashcardById(Flashcards flashcard){

@@ -13,7 +13,6 @@ window.onload = async () => {
 
   user = responseBody.data;
   sets = await getAllItems();
-  console.log(sets);
   displaySets();
 }
 
@@ -74,9 +73,9 @@ function displaySets(){
       selectButtonElem.innerText = "Select";
       selectButtonElem.value = set.id;
       selectButtonElem.addEventListener('click', function() {
-        fetch(`http://localhost:9005/flashcard/${set.id}`, {method: "GET"});
+      fetch(`http://localhost:9005/flashcard/${set.id}`, {method: "GET"});
         window.location = `../flashcard-dashboard/index.html?setId=${set.id}`;
-        });
+      });
 
       let deleteButtonElem = document.createElement("button");
       deleteButtonElem.className = "delete-button";
@@ -84,9 +83,9 @@ function displaySets(){
       deleteButtonElem.innerText = "Delete";
       deleteButtonElem.value = set.id;
       deleteButtonElem.addEventListener('click', function() {
-        fetch(`http://localhost:9005/flashcardset/${set.id}`, {method: "DELETE"});
-        window.location = "/index.html";
-        });
+      fetch(`http://localhost:9005/flashcardset/${set.id}`, {method: "DELETE"});
+        window.location = "./index.html";
+      });
 
       //Front of Card Set
       cardFrontHeaderElem.appendChild(imgElem);

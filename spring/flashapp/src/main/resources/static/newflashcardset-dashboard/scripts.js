@@ -47,7 +47,6 @@ async function saveSet(){
     )
 
     let responseBody = await response.json();
-    console.log(responseBody);
     if(responseBody){
         window.location = "./index.html";
     }else{
