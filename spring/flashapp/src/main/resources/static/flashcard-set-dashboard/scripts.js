@@ -35,7 +35,8 @@ function displaySets(){
       insideCardElem.className = "inside-card";
 
       insideCardElem.addEventListener('click', function() {
-        insideCardElem.classList.toggle('flipped');
+      insideCardElem.classList.toggle('flipped');
+        
       });
 
       let cardFaceFrontElem = document.createElement("div");
@@ -72,12 +73,20 @@ function displaySets(){
       selectButtonElem.id = "delete-card-form";
       selectButtonElem.innerText = "Select";
       selectButtonElem.value = set.id;
+      selectButtonElem.addEventListener('click', function() {
+        fetch(`http://localhost:9005/flashcard/${set.id}`, {method: "GET"});
+        window.location = `../flashcard-dashboard/index.html?setId=${set.id}`;
+        });
 
       let deleteButtonElem = document.createElement("button");
       deleteButtonElem.className = "delete-button";
       deleteButtonElem.id = "delete-card-form";
       deleteButtonElem.innerText = "Delete";
       deleteButtonElem.value = set.id;
+      deleteButtonElem.addEventListener('click', function() {
+        fetch(`http://localhost:9005/flashcardset/${set.id}`, {method: "DELETE"});
+        window.location = "/index.html";
+        });
 
       //Front of Card Set
       cardFrontHeaderElem.appendChild(imgElem);
@@ -119,3 +128,9 @@ logoutBtn.addEventListener('click', () => {
     fetch("http://localhost:9005/session", {method: "DELETE"});
     window.location = "/index.html";
 });
+
+let addCardBtn = document.getElementById("add-flashcard-btn");
+addCardBtn.addEventListener('click', () => {
+       window.location = "../newflashcardset-dashboard/index.html";
+});
+

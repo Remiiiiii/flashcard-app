@@ -13,6 +13,6 @@ let subMenu = document.getElementById("subMenu");
 //     window.location.href = "/newflashcard-dashboard/index.html";
 // });
 
-alert("hello");
+
 
 
