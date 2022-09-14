@@ -1,10 +1,10 @@
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
+let setId = params.setId;
 let cardContainer = document.getElementById("card-container");
 let user;
 let cards;
-let setId = params.setId;
 window.onload = async () => {
     let response = await fetch("http://localhost:9005/session");
       
@@ -13,6 +13,10 @@ window.onload = async () => {
     if(!responseBody.successful){
   
       window.location = "../index.html";
+    }
+
+    if(!setId){
+        window.location = "../flashcard-set-dashboard/index.html";
     }
   
     user = responseBody.data;
@@ -78,7 +82,7 @@ function displayFlashcards(){
         deleteButtonElem.value = card.id;
         deleteButtonElem.addEventListener('click', function() {
         fetch(`http://localhost:9005/flashcard/${card.id}`, {method: "DELETE"});
-          window.location = "./index.html";
+          window.location = `./index.html?setId=${setId}`;
         });
   
         //Front of Card Set
@@ -115,6 +119,11 @@ let subMenu = document.getElementById("subMenu");
 let homeButton = document.getElementById("home-button");
 homeButton.addEventListener('click', () => {
        window.location = "../flashcard-set-dashboard/index.html";
+});
+
+let newFlashcardButton = document.getElementById("add-flashcard-btn");
+newFlashcardButton.addEventListener('click', () => {
+       window.location = `../newflashcard-dashboard/index.html?setId=${setId}`;
 });
 
 
