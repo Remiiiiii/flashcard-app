@@ -104,17 +104,15 @@ function displayFlashcards(){
 
 let subMenu = document.getElementById("subMenu");
 
-//-------------------------------Profile Icon Menu Dropdown------------------------------
-
-// let addFlashcardElem = document.getElementById("add-flashcard-btn");
-// addFlashcardElem.addEventListener("click", () => {
-//     window.location.href = "/newflashcard-dashboard/index.html";
-// });
-
-
 let homeButton = document.getElementById("home-button");
 homeButton.addEventListener('click', () => {
        window.location = "../flashcard-set-dashboard/index.html";
 });
+
+let addCardBtn = document.getElementById("add-flashcard-btn");
+addCardBtn.addEventListener('click', () => {
+       window.location = "../newflashcard-dashboard/index.html";
+});
+
 
 

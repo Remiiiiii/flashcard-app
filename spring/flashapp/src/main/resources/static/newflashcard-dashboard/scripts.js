@@ -8,7 +8,10 @@ let subMenu = document.getElementById("subMenu");
 
 //-------------------------------Profile Icon Menu Dropdown------------------------------
 
-
+let addCardBtn = document.getElementById("add-flashcard-btn");
+addCardBtn.addEventListener('click', () => {
+       window.location = "../newflashcardset-dashboard/index.html";
+});
 
 
 
