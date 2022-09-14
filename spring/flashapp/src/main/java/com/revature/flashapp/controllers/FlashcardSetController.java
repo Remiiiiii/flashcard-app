@@ -1,7 +1,6 @@
 package com.revature.flashapp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,9 +29,9 @@ public class FlashcardSetController {
         return flashcardSetService.createFlashcardSet(cardInfo);
     }
 
-    @GetMapping("{setId}")
-    public FlashcardSet getflashcardSetById(@PathVariable Integer setId){
-        return flashcardSetService.getflashcardSetById(setId);
+    @GetMapping("{userId}")
+    public List<FlashcardSet> getflashcardSetByUserId(@PathVariable Integer userId){
+        return flashcardSetService.getflashcardSetByUserId(userId);
 
     }
 
@@ -47,11 +46,6 @@ public class FlashcardSetController {
     @GetMapping
     public List<FlashcardSet> showAllSets(){
         return this.flashcardSetService.showAllSets();
-    }
-
-    @GetMapping("flashcardSet/{userId}")
-    public List<FlashcardSet> showAllSets(@PathVariable Integer userId){
-        return this.flashcardSetService.getAllSetsByUserId(userId);
     }
     
 }

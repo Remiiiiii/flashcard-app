@@ -53,6 +53,10 @@ public class UserService {
         userRepo.deleteById(userId);
     }
 
+    public User getUserByUsername(String username){
+        return this.userRepo.findByUsername(username);
+    }
+
     public List<User> getAllUsers(){
         return this.userRepo.findAll();
     }

@@ -12,9 +12,9 @@ window.onload = async () => {
   }
 
   user = responseBody.data;
-
   items = await getAllItems();
-  displaySets();
+  console.log(items);
+  //displaySets();
 }
 
 async function getAllItems(){
@@ -22,7 +22,7 @@ async function getAllItems(){
 
   let responseBody = await response.json();
 
-  return responseBody.data;
+  return responseBody;
 }
 
 let card = document.querySelector(".inside-card");

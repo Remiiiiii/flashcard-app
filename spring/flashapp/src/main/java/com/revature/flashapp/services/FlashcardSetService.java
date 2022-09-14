@@ -31,8 +31,8 @@ public class FlashcardSetService {
     }
 
    
-    public FlashcardSet getflashcardSetById(Integer flashcardSetId){
-        return flashcardSetRepo.findById(flashcardSetId).orElse(null);
+    public List<FlashcardSet> getflashcardSetByUserId(Integer userId){
+        return flashcardSetRepo.findAllSetsByUserId(userId);
     }
 
     public FlashcardSet updateflashcardSetById(FlashcardSet flashcardSet){
@@ -59,10 +59,6 @@ public class FlashcardSetService {
 
     public List<FlashcardSet> showAllSets(){
         return this.flashcardSetRepo.findAll();
-    }
-
-    public List<FlashcardSet> getAllSetsByUserId(Integer userId){
-        return this.flashcardSetRepo.findAllSetsByUserId(userId);
     }
     
     // public boolean validateFlashcardSet(FlashcardSet cardInfo){

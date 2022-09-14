@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +32,8 @@ public class SessionController {
     public ResponseEntity<JsonResponse> login(HttpSession session, @RequestBody User credentials){
         
         if(userService.validateCredentials(credentials)){
-            session.setAttribute("user", credentials);
+            User userFromDb = userService.getUserByUsername(credentials.getUsername());
+            session.setAttribute("user", userFromDb);
             return ResponseEntity.status(HttpStatus.OK).body(new JsonResponse(true, "login successful and session created", credentials));
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new JsonResponse(false, "login not successful", credentials));

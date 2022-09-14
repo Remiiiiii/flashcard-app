@@ -12,4 +12,5 @@ import com.revature.flashapp.models.FlashcardSet;
 public interface FlashcardSetRepo extends JpaRepository<FlashcardSet, Integer>  {
 
     List<FlashcardSet> findAllSetsByUserId(Integer userId);
+
 }
