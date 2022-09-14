@@ -479,13 +479,22 @@ hr {
 
 #delete-card-form {
     margin-top: 410px;
- 
-
 }
+
 .delete-button {
     height: 40px;
     width: 100px;
     float: right;
+    border: none;
+    color: var(--white);
+    border-radius: 16px;
+    background-image: linear-gradient(to bottom left, var(--blue) 10%, var(--purple) 115%);
+}
+
+.cards-button {
+    height: 40px;
+    width: 100px;
+    float: left;
     border: none;
     color: var(--white);
     border-radius: 16px;
