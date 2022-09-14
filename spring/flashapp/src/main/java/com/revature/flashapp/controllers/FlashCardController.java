@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.flashapp.models.Flashcards;
 import com.revature.flashapp.services.FlashcardService;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500/", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:9005/", allowCredentials = "true")
 @RestController
 @RequestMapping("flashcard")
 public class FlashCardController {

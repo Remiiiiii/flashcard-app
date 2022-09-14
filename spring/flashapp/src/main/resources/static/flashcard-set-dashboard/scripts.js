@@ -7,8 +7,10 @@ window.onload = async () => {
   let responseBody = await response.json();
 
   if(!responseBody.successful){
-    //window.location = "../login";
+
+    window.location = "../index.html";
   }
+
   user = responseBody.data;
 
   items = await getAllItems();
@@ -35,3 +37,9 @@ let subMenu = document.getElementById("subMenu");
 function toggleMenu(){
   subMenu.classList.toggle("open-menu");
 }
+
+let logoutBtn = document.getElementById("logout-btn");
+logoutBtn.addEventListener('click', () => {
+    fetch("http://localhost:9005/session", {method: "DELETE"});
+    window.location = "/index.html";
+});

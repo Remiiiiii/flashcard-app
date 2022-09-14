@@ -16,7 +16,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("flashcardset")
-@CrossOrigin(origins = "http://localhost:5500/", allowCredentials = "true")
 public class FlashcardSetController {
 
     private FlashcardSetService flashcardSetService;

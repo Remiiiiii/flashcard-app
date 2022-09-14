@@ -183,6 +183,13 @@ nav {
     margin-right: 95px;
 }
 
+#logout-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    
+}
+
 hr {
     margin-top: 30px;
 }

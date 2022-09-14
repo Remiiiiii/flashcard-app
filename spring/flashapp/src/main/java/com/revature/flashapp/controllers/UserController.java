@@ -15,7 +15,7 @@ import com.revature.flashapp.models.User;
 import com.revature.flashapp.services.UserService;
 
 
-@CrossOrigin(origins = "http://127.0.0.1:5500/", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:9005/", allowCredentials = "true")
 @RestController
 @RequestMapping("user")
 public class UserController {

@@ -19,7 +19,6 @@ import com.revature.flashapp.models.User;
 import com.revature.flashapp.services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5500/", allowCredentials = "true")
 @RequestMapping(value = "session")
 public class SessionController {
 

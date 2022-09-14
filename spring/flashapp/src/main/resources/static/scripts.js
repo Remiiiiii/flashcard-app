@@ -4,7 +4,7 @@ window.onload = async () => {
     let responseBody = await response.json();
 
     if(responseBody.successful){
-        window.location = "./flashcard-set-dashboard";
+        window.location = "./flashcard-set-dashboard/index.html";
     }
 }
 
@@ -49,19 +49,9 @@ async function sendLoginRequest(username, password){
     let responseBody = await response.json();
     
     if(responseBody.successful){
-        window.location = "./flashcard-set-dashboard";
+        window.location = "/flashcard-set-dashboard/index.html";
     }else{
         let messageElem = document.getElementById("message");
         messageElem.style.display = "block";
-    }
-}
-
-async function checksession(){
-    let response = await fetch("http://localhost:9005/session");
-
-    let responseBody = await response.json();
-
-    if(responseBody.successful){
-        counsole.log(responseBody);
     }
 }
