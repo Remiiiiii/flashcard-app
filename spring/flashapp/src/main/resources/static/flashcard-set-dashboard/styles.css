@@ -339,6 +339,11 @@ hr {
     flex-wrap: wrap;
 }
 
+#set-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .card {
     margin-top: 100px;
     margin: 30px;
@@ -361,6 +366,10 @@ hr {
 
 .inside-card.flipped {
     transform: rotateY(180deg);
+}
+
+.inside-card.flipped.delete-button{
+    display: block;
 }
 
 .card-face {
