@@ -7,6 +7,7 @@ window.onload = async () => {
   let responseBody = await response.json();
 
   if(!responseBody.successful){
+
     window.location = "../index.html";
   }
 
