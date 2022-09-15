@@ -108,12 +108,24 @@ function displaySets(){
   });
   
 }
+let searchButtonElem = document.getElementById("find-flashcardset-btn");
+searchButtonElem.addEventListener('click', (event) => {
+  event.preventDefault();
+  let searchBarElem = document.getElementById("find-flashcard-input");
+  let filter = searchBarElem.value.toUpperCase();
+  let parent = document.getElementById("set-container");
+  let child = parent.getElementsByClassName("card");
+  for (i = 0; i < child.length; i++) {
+    title = child[i].getElementsByTagName("h2")[0];
+    txtValue = title.textContent || title.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      child[i].style.display = "";
+    } else {
+      child[i].style.display = "none";
+    }
+  }
+});
 
-//let card = document.querySelector(".inside-card");
-
-//card.addEventListener('click', function() {
-//    card.classList.toggle('flipped');
-//});
 
 let subMenu = document.getElementById("subMenu");
 
