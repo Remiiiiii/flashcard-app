@@ -11,7 +11,6 @@ window.onload = async () => {
     let responseBody = await response.json();
   
     if(!responseBody.successful){
-  
       window.location = "../index.html";
     }
 
@@ -21,6 +20,12 @@ window.onload = async () => {
   
     user = responseBody.data;
     cards = await getAllItems();
+
+    //Redirect if incorrect user
+    if(cards[0].flashcardSet.user.id != user.id){
+        window.location = "../flashcard-set-dashboard/index.html";
+    }
+    
     displayFlashcards();
 }
 
@@ -28,7 +33,7 @@ async function getAllItems(){
     let response = await fetch(`http://localhost:9005/flashcard/${setId}`);
   
     let responseBody = await response.json();
-  
+    console.log(responseBody);
     return responseBody;
 }
 

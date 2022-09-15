@@ -84,7 +84,13 @@ function displaySets(){
       deleteButtonElem.value = set.id;
       deleteButtonElem.addEventListener('click', function() {
       fetch(`http://localhost:9005/flashcardset/${set.id}`, {method: "DELETE"});
-        window.location = "./index.html";
+        //Remove Element from view
+        parentCardElem.remove();
+        //Remove from set list
+        var setToRemove = sets.indexOf(set);
+        if (setToRemove !== -1) {
+          sets.splice(setToRemove, 1);
+        }
       });
 
       //Front of Card Set
