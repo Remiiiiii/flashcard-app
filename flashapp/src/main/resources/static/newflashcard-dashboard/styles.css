@@ -1,0 +1,679 @@
+:root {
+    --white: #ecf0f3;
+    --gray: #cdd0d4;
+    --darkgrey: #555;
+    --blue: #33b4e7;
+    --darkerblue: #4dabf5;
+    --green: #88ef9e;
+    --darkergreen: #87f608;
+    --purple: #b39cdb;
+    --darkerpurple: #5f29b2;
+    --orange: #f5974d;
+    --yellow: #ffeb3b;
+    --red: #ed4343;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+nav {
+    height: 60px;
+    margin-top: 10px;
+
+}
+
+.nav-container {
+    display: flex;
+    background-color: var(--white);
+    width: 40%;
+    border-radius: 50px;
+    box-shadow: 13px 13px 20px #cdd0d4, -13px -13px 20px #fff;
+    margin-top: 20px;
+}
+
+.nav-container2 {
+    background-color: var(--white);
+    width: 20%;
+    height: 63px;
+    border-radius: 50px;
+    box-shadow: 13px 13px 20px #cdd0d4, -13px -13px 20px #fff;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.nav-container2 .save-flashcard-btn{
+   display: flex;
+   justify-content: center;
+
+}
+
+.nav-container2 button {
+    margin-right: 5px;
+}
+
+.home-btn {
+    border-radius: 25px;
+    box-shadow: 8px 8px 8px #cbced1,
+        -8px -8px 8px #fff;
+    border: none;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100px;
+
+}
+
+
+.nav-item-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item-container2 {
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.find-flashcard-btn {
+    border-radius: 25px;
+    box-shadow: 8px 8px 8px #cbced1,
+        -8px -8px 8px #fff;
+    border: none;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100px;
+    margin-left: 20px;
+
+}
+
+#find-flashcard-input {
+    border-radius: 25px;
+    box-shadow: 8px 8px 8px #cbced1,
+        -8px -8px 8px #fff;
+    border: none;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 20px;
+    outline: none;
+}
+
+#find-flashcard-form {
+    padding: 20px
+}
+
+.save-flashcard-btn, .delete-flashcard-btn {
+    border-radius: 25px;
+    box-shadow: 8px 8px 8px #cbced1,
+        -8px -8px 8px #fff;
+    border: none;
+    text-align: center;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 3px;
+    z-index: 200;
+    
+}
+/* #add-flashcard-input {
+    border-radius: 25px;
+    box-shadow: 8px 8px 8px #cbced1,
+        -8px -8px 8px #fff;
+    border: none;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 20px;
+    outline: none;
+} */
+
+.nav-link {
+    color: #555;
+    font-weight: 600;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    z-index: 100;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+    width: 300px;
+}
+
+.sub-menu {
+    background-image: linear-gradient(to bottom right, var(--blue), var(--purple));
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 16px;
+}
+
+.sub-menu h3 {
+    font-weight: 500;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--white);
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+    color: var(--white);
+    cursor: pointer;
+    margin: 12px;
+
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 95px;
+}
+
+hr {
+    margin-top: 30px;
+}
+
+.popup {
+    width: 400px;
+    background: lightblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    padding: 0 30px 30px;
+    z-index: 200;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    ;
+
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: blue;
+    color: whtie;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-start-end-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container-goo {
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 0;
+    filter: url(#goo);
+    overflow: hidden;
+}
+
+.particle {
+    width: 100px;
+    height: 100px;
+    top: -20%;
+    /* background-color: black; */
+    position: absolute;
+    border-radius: 50%;
+    animation: fall 15s infinite;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@keyframes fall {
+    0% {
+        top: -20%;
+    }
+
+    20% {
+        top: 0%;
+    }
+
+    80% {
+        top: 85%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.particle:nth-of-type(2n) {
+    width: 60px;
+    height: 60px;
+    background-image: linear-gradient(to bottom right, var(--orange), var(--red));
+}
+
+.particle:nth-of-type(3n) {
+    width: 120px;
+    height: 120px;
+    background-image: linear-gradient(to bottom right, var(--blue), var(--darkerpurple));
+
+
+}
+
+.particle:nth-of-type(1) {
+    left: 30%;
+    animation-delay: 1s;
+    background-image: linear-gradient(to bottom right, var(--darkergreen), var(--orange));
+
+}
+
+.particle:nth-of-type(2) {
+    left: 60%;
+    animation-delay: 2s;
+    background-image: linear-gradient(to bottom right, var(--red), var(--yellow));
+
+}
+
+.particle:nth-of-type(3) {
+    left: 25%;
+    animation-delay: 3s;
+    background-image: linear-gradient(to bottom right, var(--yellow), var(--red));
+
+}
+
+.particle:nth-of-type(4) {
+    left: 75%;
+    animation-delay: 4s;
+    background-image: linear-gradient(to bottom right, var(--purple), var(--red));
+
+}
+
+.particle:nth-of-type(5) {
+    left: 35%;
+    animation-delay: 5s;
+    background-image: linear-gradient(to bottom right, var(--darkergreen), var(--darkerpurple));
+
+}
+
+.particle:nth-of-type(6) {
+    left: 50%;
+    animation-delay: 6s;
+    background-image: linear-gradient(to bottom right, var(--orange), var(--purple));
+
+}
+
+.particle:nth-of-type(7) {
+    left: 65%;
+    animation-delay: 7s;
+    background-image: linear-gradient(to bottom right, var(--green), var(--yellow));
+
+}
+
+.particle:nth-of-type(8) {
+    left: 35%;
+    animation-delay: 8s;
+    background-image: linear-gradient(to bottom right, var(--purple), var(--yellow));
+
+}
+
+.particle:nth-of-type(9) {
+    left: 55%;
+    animation-delay: 9s;
+    background-image: linear-gradient(to bottom right, var(--blue), var(--red));
+
+}
+
+.particle:nth-of-type(10) {
+    left: 55%;
+    animation-delay: 10s;
+    background-image: linear-gradient(to bottom right, var(--yellow), var(--blue));
+
+}
+
+.particle:nth-of-type(11) {
+    left: 35%;
+    animation-delay: 11s;
+    background-image: linear-gradient(to bottom right, var(--orange), var(--purple));
+
+}
+
+.particle:nth-of-type(12) {
+    left: 50%;
+    animation-delay: 12s;
+    background-image: linear-gradient(to bottom right, var(--purple), var(--darkerpurple));
+
+}
+
+.particle:nth-of-type(13) {
+    left: 65%;
+    animation-delay: 13s;
+    background-image: linear-gradient(to bottom right, var(--blue), var(--orange));
+
+}
+
+.particle:nth-of-type(14) {
+    left: 40%;
+    animation-delay: 14s;
+    background-image: linear-gradient(to bottom right, var(--purple), var(--red));
+
+}
+
+.particle:nth-of-type(15) {
+    left: 60%;
+    animation-delay: 15s;
+    background-image: linear-gradient(to bottom right, var(--blue), var(--yellow));
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    top: -225px;
+    width: 1000px;
+    height: 350px;
+    perspective: 1500px;
+    border-radius: 16px;
+    z-index: 10;
+    border: none;
+}
+
+.inside-card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.inside-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background-image: linear-gradient(to bottom right, var(--blue), var(--purple));
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.card-front h2 {
+    color: var(--white);
+    font-size: 22px;
+    text-align: center;
+}
+
+.card-back {
+    background-color: var(--blue);
+    transform: rotateY(180deg);
+    background-image: linear-gradient(to bottom right, var(--orange), var(--red));
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-card-content {
+    width: 100%;
+    height: 100%;
+}
+
+.card-front-header {
+    position: relative;
+    padding: 30px 30px 40px;
+    padding-top: 15px;
+}
+
+.card-front-header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 0 50% 0;
+    background-image: linear-gradient(to bottom left, var(--blue) 10%, var(--purple) 115%);
+}
+
+.back-card-header h2 {
+    color: #ecf0f3;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.back-card-body {
+    padding: 30px;
+}
+
+.back-card-body h3 {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.back-card-body p {
+    color: var(--white);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.front-card-logo {
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 5px solid var(--white);
+    object-fit: cover;
+    box-shadow: 5px 15px 18px 3px rgba(0, 0, 0, 0.2)
+}
+
+#delete-card-form {
+    margin-top: 410px;
+
+
+}
+
+.delete-button {
+    height: 40px;
+    width: 100px;
+    float: right;
+    border: none;
+    color: var(--white);
+    border-radius: 16px;
+    background-image: linear-gradient(to bottom left, var(--blue) 10%, var(--purple) 115%);
+}
+
+/* <div class="container">
+<div class="create-card-container">
+    <label for="question">Questions</label>
+    <textarea id="question"></textarea>
+    <br>
+    <label for="answer">Answer</label>
+    <textarea id="answer"></textarea>
+    <button onclick="addFlashcard()">Save</button>
+    <button onclick="closeCreateCardContainer()">Close</button>
+</div>
+<div class="flashcards"></div>
+</div> */
+.new-flashcard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: -650px;
+    padding: 0 10px;
+    padding-left: 25px;
+
+}
+
+.create-card-container {
+    width: 1000px;
+    margin-top: 40px;
+    padding: 35px;
+    border-radius: 16px;
+    background-image: linear-gradient(to bottom right, var(--blue), var(--purple));
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+
+}
+
+.create-card-container textarea {
+    width: 100%;
+    font-family: inherit;
+    background:transparent;
+    margin-top: 10px;
+    border: none;
+    padding: 10px;
+    color: var(--white);
+    font-size: 22px;
+    
+}
+
+.create-card-container textarea::before {
+    animation: cursor-blink 1.5s steps(2) infinite;
+}
+ 
+
+.create-card-container label {
+    color: var(--darkgrey);
+    font-weight: 500;
+    font-size: 18px;
+    background: var(--white);
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow:  3px 5px 3px rgb(0 0 0 / 20%)
+}
+
+.flashcards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.flashcard {
+    width: 370px;
+    height: 200px;
+    word-wrap: break-word;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+#exampleModalCenter {
+    z-index: 20;
+
+}
+
+@keyframes cursor-blink {
+    0% {
+        opacity: 0;
+    }
+    
+}
+
+
+@media(max-width: 768px) {
+    .new-flashcard-container {
+        width: 100%;
+    }
+
+    .flashcard {
+        margin: auto;
+    }
+
+    .flashcard {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width: 480px) {
+    .create-card-container {
+        width: 100%;
+    }
+}

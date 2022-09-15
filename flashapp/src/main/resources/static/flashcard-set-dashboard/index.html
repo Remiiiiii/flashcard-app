@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">
+        <img src="../images/fm.jpg" alt="" width="100" height="100" class="d-inline-block align-text-top">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="nav-container">
+          <div class="navbar-nav">
+            <div class="container nav-item-container">
+              <form id="find-flashcard-form">
+                <button class="home-btn">HOME</button>
+                <input type="text" id="find-flashcard-input" placeholder="find flashcard set..." />
+                <button type="button" class="find-flashcard-btn" id="find-flashcardset-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                  </svg></button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="nav-container2">
+          <div class="nav-item-container2">
+            <!-- <form id="add-flashcard-form"> -->
+            <button type="button" class="add-flashcard-btn" id="add-flashcard-btn">CREATE A NEW FLASHCARD SET</button>
+            <div class="container">
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="../images/fm.jpg" alt="" width="100" height="100" class="d-inline-block align-text-top user-pic"
+      onclick="toggleMenu()">
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <img src="../images/fm.jpg">
+          <h3>Deez Nuts</h3>
+        </div>
+        <hr>
+        <a href="#" class="sub-menu-link">
+          <p>Edit Profile</p>
+        </a>
+        <a href="#" class="sub-menu-link">
+          <p>Night Mode</p>
+        </a>
+        <a href="https://www.google.com" class="sub-menu-link">
+          <p>Privacy Policy</p>
+        </a>
+        <button id="logout-btn">LOGOUT</button>
+      </div>
+    </div>
+
+
+  </nav>
+  <hr>
+
+  <div class="container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <!-- <div class="border"></div>
+        <div class="border"></div> -->
+    <svg>
+      <defs>
+        <filter id='goo'>
+          <feGaussianBlur in='sourcegraphic' stdDeviation='10' />
+          <feColorMatrix in='name' mode='matrix' values='1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 30 -15' />
+          <feBlend in='SourceGraphic' />
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="set-container">
+      
+    </div>
+  </div>
+  <script src="../flashcard-set-dashboard/scripts.js"></script>
+
+</body>
+
+</html>
