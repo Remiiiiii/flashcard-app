@@ -121,7 +121,7 @@
                     <archive>
                         <manifest>
                             <!-- this is the only thing we need to change in this plugin -->
-                            <mainClass>com.revature.FlashappApplication</mainClass>
+                            <mainClass>com.revature.flashapp.FlashappApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
